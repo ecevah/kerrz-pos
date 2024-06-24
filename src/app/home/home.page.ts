@@ -83,6 +83,7 @@ export class HomePage implements OnInit {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           };
+          console.log(coords);
           this.store.dispatch(
             handleLocation({
               latitude: coords.latitude,
@@ -95,8 +96,8 @@ export class HomePage implements OnInit {
           console.error("Error getting location", error);
           this.store.dispatch(
             handleLocation({
-              latitude: 0,
-              longitude: 0,
+              latitude: 38.472192,
+              longitude: 27.2441878,
             })
           );
           this.fetchData();
