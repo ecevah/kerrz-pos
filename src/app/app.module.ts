@@ -8,6 +8,11 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { StoreModule } from "@ngrx/store";
+import {
+  counterReducer,
+  locationReducer,
+  storeReducer,
+} from "src/services/data.reducer";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +23,11 @@ import { StoreModule } from "@ngrx/store";
     }),
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      count: counterReducer,
+      location: locationReducer,
+      stores: storeReducer,
+    }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

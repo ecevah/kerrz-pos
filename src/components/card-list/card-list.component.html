@@ -1,8 +1,26 @@
 <ion-list lines="none">
-  <ion-item class="ion-no-padding">
-    <app-card></app-card>
-  </ion-item>
+  <ng-container *ngFor="let store of stores.stores">
+    <ion-item
+      *ngIf="store.title && store.images.length > 0 && store.images[0].base64"
+      class="ion-no-padding"
+    >
+      <app-card
+        [title]="store.title"
+        [image]="store.images[0].base64"
+        [type]="store.type"
+        [minPrice]="store.storeInfo.minOrderPrice"
+        [open]="store.storeInfo.workingHours[0].open"
+        [close]="store.storeInfo.workingHours[0].close"
+        [rate]="store.storeInfo.rate"
+        [latitude]="store.storeInfo.geoLocation.latitude"
+        [longitude]="store.storeInfo.geoLocation.longitude"
+      ></app-card>
+    </ion-item>
+  </ng-container>
 </ion-list>
-<ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+<ion-infinite-scroll threshold="100px" (ionInfinite)="onIonInfinite($event)">
+  <ion-infinite-scroll-content
+    loadingText="Daha fazla yükleniyor..."
+    loadingSpinner="bubbles"
+  ></ion-infinite-scroll-content>
 </ion-infinite-scroll>

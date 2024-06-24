@@ -1,4 +1,8 @@
-<ion-searchbar showClearButton="never" placeholder="Mekan Ara">
+<ion-searchbar
+  (ionInput)="onSearchChange($event)"
+  showClearButton="never"
+  placeholder="Mekan Ara"
+>
   <ion-button class="filter-icon" id="open-picker">
     <img src="../../assets/icon/filter.svg"
   /></ion-button>

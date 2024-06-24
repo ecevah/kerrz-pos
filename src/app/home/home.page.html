@@ -8,7 +8,9 @@
     </ion-refresher>
     <app-search></app-search>
     <ion-text>
-      <p class="title-text">Sonuçlar</p>
+      <p class="title-text">
+        Sonuçlar {{ count$ | async }}
+      </p>
     </ion-text>
     <app-card-list></app-card-list>
   </ion-content>

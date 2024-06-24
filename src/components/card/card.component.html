@@ -2,18 +2,14 @@
   <div class="card-inclusive">
     <div class="card-star-inclusive">
       <img src="../../assets/icon/star.svg" />
-      <div class="star-text">4.9</div>
+      <div class="star-text">{{rate}}</div>
     </div>
-    <img
-      class="card-image"
-      alt="Silhouette of mountains"
-      src="https://ionicframework.com/docs/img/demos/card-media.png"
-    />
+    <img class="card-image" alt="{{title}}" src="{{image}}" />
   </div>
   <ion-card-header>
     <ion-card-title>
-      <p class="card-title-type">Pastanesi Uzun Ad Demo</p>
-      <p class="card-text-type">Coffee, Tatlı</p>
+      <p class="card-title-type">{{title}}</p>
+      <p class="card-text-type">{{type}}</p>
     </ion-card-title>
   </ion-card-header>
 
@@ -26,14 +22,14 @@
             src="../../assets/icon/basket.svg"
             alt="basket"
           />
-          <p class="card-text-amount">Min. Sipariş Tutarı: ₺30</p>
+          <p class="card-text-amount">Min. Sipariş Tutarı: ₺{{minPrice}}</p>
         </div>
       </div>
       <div class="card-content-line">
-        <p class="card-text-distance">3 km yakında</p>
+        <p class="card-text-distance">{{kilometer}} km yakında</p>
         <p class="card-text-business">
           <span class="card-text-business-green">İşletme Açık</span>
-          10:00/22:00
+          {{open}}/{{close}}
         </p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Platform } from "@ionic/angular";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -8,8 +9,8 @@ import { Platform } from "@ionic/angular";
 })
 export class AppComponent {
   constructor(private platform: Platform) {
-    this.platform.ready().then(() => {
-      document.body.classList.remove("dark");
-    });
+      this.platform.ready().then(() => {
+        document.body.classList.remove("dark");
+      });
   }
 }
