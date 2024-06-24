@@ -6,6 +6,7 @@ import {
   increment,
   loadStoresSuccess,
   reset,
+  searchStores,
 } from "./data.action";
 
 interface LocationState {
@@ -15,12 +16,14 @@ interface LocationState {
 
 export interface StoreState {
   stores: any;
+  filteredStores: any;
 }
 
 export const initialState: number = 0;
 
 export const initialStoreState: StoreState = {
   stores: [],
+  filteredStores: [],
 };
 
 export const initialLocationState: LocationState = {
@@ -46,7 +49,11 @@ export const locationReducer = createReducer(
 
 export const storeReducer = createReducer(
   initialStoreState,
-  on(loadStoresSuccess, (state, { stores }) => ({ ...state, stores })),
+  on(loadStoresSuccess, (state, { stores }) => ({
+    ...state,
+    stores,
+    filteredStores: stores,
+  })),
   on(addMoreStores, (state, { stores }) => ({
     ...state,
     stores: [
@@ -56,5 +63,18 @@ export const storeReducer = createReducer(
       ),
       ...stores,
     ],
+    filteredStores: [
+      ...state.filteredStores.filter(
+        (existingStore: any) =>
+          !stores.some((newStore) => newStore.id === existingStore.id)
+      ),
+      ...stores,
+    ],
+  })),
+  on(searchStores, (state, { query }) => ({
+    ...state,
+    filteredStores: state.stores.filter((store: any) =>
+      store.title.toLowerCase().includes(query.toLowerCase())
+    ),
   }))
 );

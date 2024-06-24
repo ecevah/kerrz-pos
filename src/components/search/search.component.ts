@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { searchStores } from "src/services/data.action";
 
 @Component({
   selector: "app-search",
@@ -7,13 +9,40 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 })
 export class SearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
+  stores: any[] = [];
+  filteredStores: any[] = [];
+  searchTerm: string = "";
+
+  constructor(private store: Store) {}
+
+  ngOnInit() {
+    this.stores = this.fetchStores();
+  }
 
   onSearchChange(event: any) {
-    this.searchEvent.emit(event.target.value);
+    this.searchTerm = event.target.value;
+    this.searchEvent.emit(this.searchTerm);
+    this.store.dispatch(searchStores({ query: this.searchTerm }));
+    this.filterStores(this.searchTerm);
   }
-  constructor() {}
 
-  ngOnInit() {}
+  filterStores(searchTerm: string): void {
+    if (!searchTerm) {
+      this.filteredStores = [];
+    } else {
+      this.filteredStores = this.stores.filter((store) =>
+        store.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+  }
+
+  fetchStores(): any[] {
+    return [{ name: "Store 1" }, { name: "Store 2" }, { name: "Store 3" }];
+  }
+
+  getDisplayedStores(): any[] {
+    return this.searchTerm ? this.filteredStores : this.stores;
+  }
 
   public pickerColumns = [
     {

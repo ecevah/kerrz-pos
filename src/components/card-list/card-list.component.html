@@ -1,5 +1,5 @@
 <ion-list lines="none">
-  <ng-container *ngFor="let store of stores.stores">
+  <ng-container *ngFor="let store of stores.filteredStores">
     <ion-item
       *ngIf="store.title && store.images.length > 0 && store.images[0].base64"
       class="ion-no-padding"

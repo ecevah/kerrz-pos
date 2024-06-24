@@ -21,3 +21,8 @@ export const loadStoresFailure = createAction(
   "[Store List] Load Stores Failure",
   props<{ error: any }>()
 );
+
+export const searchStores = createAction(
+  "[Store] Search Stores",
+  props<{ query: string }>()
+);
