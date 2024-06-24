@@ -24,4 +24,4 @@ Uygulamayı incelemek için aşağıdaki adresi kullanabilirsiniz:
 http://20.67.241.118:3000/
 ```
 
-![UAV Rental System](https://github.com/ecevah/kerzz-pos/blob/main/src/assets/video.mp4)
+<video width="100%" controls> <source src="https://github.com/ecevah/kerzz-pos/blob/main/src/assets/video.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
