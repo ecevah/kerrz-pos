@@ -10,6 +10,7 @@ import { CardComponent } from "src/components/card/card.component";
 import { HeaderComponent } from "src/components/header/header.component";
 import { SearchComponent } from "src/components/search/search.component";
 import { CardListComponent } from "src/components/card-list/card-list.component";
+import { LoadingComponent } from "src/components/loading/loading.component";
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
@@ -20,6 +21,7 @@ import { CardListComponent } from "src/components/card-list/card-list.component"
     HeaderComponent,
     SearchComponent,
     CardListComponent,
+    LoadingComponent,
   ],
 })
 export class HomePageModule {}

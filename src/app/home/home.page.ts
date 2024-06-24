@@ -28,6 +28,7 @@ export class HomePage implements OnInit {
     longitude: 0,
   };
   stores: any;
+  isLoading: boolean = true;
 
   constructor(private _api: ApiService, private store: Store<AppState>) {
     this.count$ = this.store.select("count");
@@ -53,11 +54,12 @@ export class HomePage implements OnInit {
       currentCount,
       currentCount + 5,
       (res: any) => {
-        console.log(res);
         this.store.dispatch(increment());
-        console.log(res.response);
         if (res && res.response && Array.isArray(res.response)) {
           this.store.dispatch(loadStoresSuccess({ stores: res.response }));
+          setTimeout(() => {
+            this.isLoading = false;
+          }, 900);
         } else {
           console.error("Invalid response format", res);
         }
