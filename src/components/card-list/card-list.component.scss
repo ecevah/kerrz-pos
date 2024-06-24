@@ -1,0 +1,9 @@
+.item-inner {
+  padding-right: 0 !important;
+  padding-left: 0;
+}
+
+:host {
+  --inner-padding-end: 0px !important;
+  --ion-safe-area-right: 0 !important;
+}

@@ -1,0 +1,69 @@
+// Colors
+$gray_text_color: #1a1824;
+$title_color: #040405;
+$green_text: #34c47c;
+$shadow_color: #0108241a;
+$dark_gray_text_color: #0108241a;
+$red_background: #b70014;
+$purple_shadow: #6c63ff40;
+$background: #f9f9fa;
+$light_gray_text_color: #1a182480;
+
+// Montserrat Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+// TTCommons Medium Font
+@font-face {
+  font-family: "TTCommonsMedium";
+  src: url("/assets/font/TTCommonsMedium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+ion-searchbar {
+  padding: 0;
+  margin-top: 16pt;
+  margin-right: 16pt;
+  margin-left: 16pt;
+  font-family: "TTCommonsMedium", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14pt;
+  color: $gray_text_color;
+  box-shadow: 0px 10px 25px #0108241a;
+  height: 40pt;
+  --placeholder-color: rgb(26, 24, 36, 0.4);
+  --icon-color: rgb(26, 24, 36, 0.4);
+  position: relative;
+  z-index: 10;
+  width: calc(100% - 32pt);
+
+  & .filter-icon {
+    display: block !important;
+    position: absolute;
+    right: 10pt;
+    top: 2pt;
+    z-index: 11;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.sc-ion-searchbar-md-h {
+  --box-shadow: none;
+  border-radius: 9pt;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+  height: 40pt;
+}
+
+ion-button {
+  --background: transparent;
+  --padding-end: 0;
+  --padding-bottom: 0;
+  --padding-top: 0;
+  --padding-start: 0;
+  --box-shadow: none;
+}

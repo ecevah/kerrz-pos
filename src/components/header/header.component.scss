@@ -1,0 +1,64 @@
+// Colors
+$gray_text_color: #1a1824;
+$title_color: #040405;
+$green_text: #34c47c;
+$shadow_color: #0108241a;
+$dark_gray_text_color: #0108241a;
+$red_background: #b70014;
+$purple_shadow: #6c63ff40;
+$background: #f9f9fa;
+$light_gray_text_color: #1a182480;
+
+// Montserrat Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+// TTCommons Medium Font
+@font-face {
+  font-family: "TTCommonsMedium";
+  src: url("/assets/font/TTCommonsMedium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.center-title {
+  font-family: "TTCommonsMedium", sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: $title_color;
+  font-size: 13pt !important;
+  text-align: center;
+  letter-spacing: 0.88pt;
+  line-height: 18pt !important;
+  font-weight: 600;
+}
+
+.header,
+ion-toolbar {
+  --background: white;
+  border: none;
+  --min-height: 45pt;
+  box-shadow: 0px 5px 9px rgba(1, 8, 36, 0.019607843);
+}
+
+ion-content,
+#background-content {
+  --background: $background;
+  background-color: $background;
+}
+
+ion-menu-button {
+  margin: 0;
+  padding: 0;
+  width: 40pt;
+  height: 40px;
+}
+
+.sc-ion-buttons-md-s ion-button {
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

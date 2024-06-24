@@ -1,0 +1,254 @@
+// Colors
+$gray_text_color: #1a1824;
+$title_color: #040405;
+$green_text: #34c47c;
+$shadow_color: #0108241a;
+$dark_gray_text_color: #0108241a;
+$red_background: #b70014;
+$purple_shadow: #6c63ff40;
+$background: #f9f9fa;
+$light_gray_text_color: #1a182480;
+
+// Montserrat Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+// TTCommons Medium Font
+@font-face {
+  font-family: "TTCommonsMedium";
+  src: url("/assets/font/TTCommonsMedium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.card-inclusive {
+  position: relative;
+  z-index: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+
+  & .card-star-inclusive {
+    position: absolute;
+    width: 56pt;
+    height: 32pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $red_background;
+    z-index: 100;
+    top: 8pt;
+    left: 8pt;
+    border-radius: 8pt;
+
+    & img {
+      width: 13pt;
+      height: 13pt;
+      margin-right: 3pt;
+    }
+
+    & .star-text {
+      color: white;
+      letter-spacing: -0.29pt;
+      font-size: 12pt;
+      font-weight: 600;
+      line-height: 22pt;
+      text-align: center;
+    }
+  }
+}
+
+.card-image {
+  border-bottom-left-radius: 9pt;
+  border-bottom-right-radius: 9pt;
+}
+
+ion-card {
+  border-radius: 9pt;
+  margin: 0;
+  margin-bottom: 15pt;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  box-shadow: 0px 10px 25px #0108241a;
+  width: calc(100% - 32pt);
+  margin-left: 16pt;
+  margin-right: 16pt;
+}
+
+ion-card-header {
+  padding: 0;
+  margin-top: 4pt;
+  margin-left: 10pt;
+  width: 200pt;
+
+  & p {
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  & .card-title-type {
+    color: $title_color;
+    font-size: 16pt;
+    font-weight: 600;
+    line-height: 21pt;
+    margin-bottom: 4pt;
+  }
+}
+
+.title-text {
+  margin-top: 30pt;
+  margin-bottom: 15pt;
+  font-weight: 600;
+  font-size: 14pt;
+  letter-spacing: -0.14pt;
+  line-height: 18pt;
+  color: $gray_text_color;
+}
+
+ion-searchbar {
+  padding: 0;
+  margin-top: 9pt;
+  font-family: "TTCommonsMedium", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14pt;
+  color: $gray_text_color;
+
+  &::placeholder {
+    color: rgba(27, 24, 37, 0.4);
+  }
+}
+
+ion-card-content {
+  padding: 0;
+}
+
+.card-text-type {
+  font-weight: 600;
+  font-size: 12pt;
+  line-height: 10pt;
+  color: rgb(26, 24, 36, 0.5);
+
+  & p {
+    margin-bottom: 0;
+  }
+}
+
+.card-content-inclusive {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  padding-bottom: 12pt;
+
+  & p {
+    margin-bottom: 0;
+  }
+
+  & .card-content-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    & .card-amount {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 7pt;
+      margin-left: auto;
+
+      & .card-text-amount {
+        font-weight: 600;
+        font-size: 12pt;
+        line-height: 10pt;
+        color: rgb(26, 24, 36, 0.5);
+      }
+
+      & .card-amount-img {
+        width: 10pt;
+        height: 10pt;
+        margin-right: 3pt;
+      }
+    }
+
+    & .card-text-distance {
+      font-weight: 600;
+      font-size: 12pt;
+      line-height: 10pt;
+      color: $gray_text_color;
+    }
+
+    & .card-text-business {
+      font-weight: 700;
+      font-size: 12pt;
+      line-height: 10pt;
+      color: $light_gray_text_color;
+      text-align: end;
+
+      & .card-text-business-green {
+        font-weight: 600;
+        color: $green_text;
+      }
+    }
+  }
+}
+
+ion-card-content {
+  padding: 0;
+}
+
+@media (max-width: 421px) {
+  .card-text-amount,
+  .card-text-type,
+  .card-text-distance,
+  .card-text-business {
+    font-size: 11pt !important;
+  }
+}
+
+@media (max-width: 394px) {
+  .card-text-amount,
+  .card-text-type,
+  .card-text-distance,
+  .card-text-business {
+    font-size: 10pt !important;
+  }
+
+  ion-card-title {
+    font-size: 15pt !important;
+  }
+
+  .card-star-inclusive {
+    width: 50pt !important;
+    height: 26pt !important;
+
+    & img {
+      width: 10pt !important;
+      height: 10pt !important;
+    }
+  }
+
+  .star-text {
+    font-size: 10pt !important;
+  }
+}
+
+@media (max-width: 359px) {
+  .card-text-amount {
+    width: 83px;
+  }
+  ion-card-header {
+    width: 80%;
+  }
+  .card-text-distance {
+    width: 140px;
+  }
+}
+
+.item-inner {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

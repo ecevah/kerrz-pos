@@ -1,0 +1,11 @@
+<ion-searchbar showClearButton="never" placeholder="Mekan Ara">
+  <ion-button class="filter-icon" id="open-picker">
+    <img src="../../assets/icon/filter.svg"
+  /></ion-button>
+</ion-searchbar>
+<ion-picker-legacy
+  trigger="open-picker"
+  [columns]="pickerColumns"
+  [buttons]="pickerButtons"
+  class="custom-picker"
+></ion-picker-legacy>

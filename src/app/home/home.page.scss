@@ -1,0 +1,35 @@
+// Colors
+$gray_text_color: #1a1824;
+$title_color: #040405;
+$green_text: #34c47c;
+$shadow_color: #0108241a;
+$dark_gray_text_color: #0108241a;
+$red_background: #b70014;
+$purple_shadow: #6c63ff40;
+$background: #f9f9fa;
+$light_gray_text_color: #1a182480;
+
+// Montserrat Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+// TTCommons Medium Font
+@font-face {
+  font-family: "TTCommonsMedium";
+  src: url("/assets/font/TTCommonsMedium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 25pt;
+  margin-bottom: 8pt;
+  font-weight: 600;
+  font-size: 14pt;
+  letter-spacing: -0.14pt;
+  line-height: 18pt;
+  color: $gray_text_color;
+  margin-left: 16pt;
+}
