@@ -20,49 +20,53 @@ export class SearchComponent implements OnInit {
       name: "meat",
       options: [
         {
-          text: "Pepperoni",
+          text: "Tümü",
           value: "pepperoni",
         },
         {
-          text: "Smoked Ham",
+          text: "Coffee",
           value: "smoked-ham",
         },
         {
-          text: "Crispy Bacon",
+          text: "Restorant",
           value: "bacon",
         },
       ],
     },
     {
-      name: "veggies",
+      name: "Open",
       options: [
         {
-          text: "Red onion",
+          text: "Tümü",
           value: "red-onion",
         },
         {
-          text: "Peppers",
+          text: "Açık",
           value: "peppers",
         },
         {
-          text: "Black olives",
+          text: "Kapalı",
           value: "black-olives",
         },
       ],
     },
     {
-      name: "crust",
+      name: "star",
       options: [
         {
-          text: "Pan style",
+          text: "Tümü",
           value: "pan",
         },
         {
-          text: "Hand tossed",
+          text: "5-4 Puan",
+          value: "pan",
+        },
+        {
+          text: "4-3 Puan",
           value: "hand-tossed",
         },
         {
-          text: "Stuffed crust",
+          text: "2-1 Puan",
           value: "stuffed-crust",
         },
       ],

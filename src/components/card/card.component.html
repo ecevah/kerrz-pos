@@ -28,7 +28,12 @@
       <div class="card-content-line">
         <p class="card-text-distance">{{kilometer}} km yakında</p>
         <p class="card-text-business">
-          <span class="card-text-business-green">İşletme Açık</span>
+          <span
+            [ngClass]="status == 'open' ? 'card-text-business-green' : 'card-text-business-red'"
+          >
+            İşletme {{status == 'open' ? 'Açık' : 'Kapalı'}}
+          </span>
+
           {{open}}/{{close}}
         </p>
       </div>

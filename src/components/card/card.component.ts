@@ -23,6 +23,7 @@ export class CardComponent implements OnInit {
   @Input() rate: any;
   @Input() latitude: any;
   @Input() longitude: any;
+  @Input() status: any;
 
   location: { latitude: number; longitude: number } = {
     latitude: 0,
